@@ -1,0 +1,34 @@
+.heading-nav {
+  background-color: #8a0b0b;
+  text-align: center;
+  box-shadow: 0 8px 6px -6px grey;
+
+  h1 {
+    font-family: "Source Serif Pro", cursive;
+    font-size: 2rem;
+    padding: 2rem 0 1rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 30%;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-family: "Marck Script", cursive;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    li {
+      font-size: 1.5rem;
+      margin: 0 2rem 2rem;
+      font-family: "Source Serif Pro";
+      cursor: pointer;
+    }
+  }
+}

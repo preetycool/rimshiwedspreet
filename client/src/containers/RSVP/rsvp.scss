@@ -1,0 +1,28 @@
+.rsvp-form {
+  margin: 8rem auto;
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    font-family: "Source Serif Pro", cursive;
+  }
+
+  .information-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .MuiFormControl-root {
+      width: 500px;
+      margin: 1rem;
+    }
+  }
+
+  .button-submit {
+    background-color: #8a0b0b;
+  }
+
+  .info-textField {
+    width: 100vw;
+  }
+}
