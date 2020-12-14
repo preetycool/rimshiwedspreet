@@ -20,6 +20,15 @@ app.use(cors());
 app.use(express.json());
 app.listen(PORT);
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
+
 const transporter = nodemailer.createTransport(transport);
 
 transporter.verify((error, success) => {
@@ -28,10 +37,6 @@ transporter.verify((error, success) => {
   } else {
     console.log("Server is ready to take messages");
   }
-});
-
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/client/public/index.html");
 });
 
 app.post("/send", (req, res, next) => {
