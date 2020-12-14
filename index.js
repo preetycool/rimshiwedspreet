@@ -31,7 +31,7 @@ transporter.verify((error, success) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile("./client/public/index.html");
+  res.sendFile(__dirname + "/client/public/index.html");
 });
 
 app.post("/send", (req, res, next) => {
