@@ -1,10 +1,18 @@
 .rsvp-form {
   margin: 8rem auto;
 
-  h1 {
+  .title {
     font-size: 2rem;
     text-align: center;
     font-family: "Source Serif Pro", cursive;
+    margin-bottom: 3rem;
+  }
+
+  .submission-message {
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Source Serif Pro", cursive;
+    font-weight: 500;
   }
 
   .information-form {
@@ -16,6 +24,11 @@
       width: 500px;
       margin: 1rem;
     }
+  }
+
+  .circular-loader {
+    margin: 5rem 0;
+    text-align: center;
   }
 
   .button-submit {
