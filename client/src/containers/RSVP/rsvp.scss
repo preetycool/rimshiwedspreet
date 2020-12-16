@@ -1,11 +1,14 @@
 .rsvp-form {
   margin: 8rem auto;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 8px 6px -6px grey;
 
   .title {
     font-size: 2rem;
     text-align: center;
     font-family: "Source Serif Pro", cursive;
-    margin-bottom: 3rem;
+    margin: 2rem;
   }
 
   .submission-message {
@@ -32,7 +35,15 @@
   }
 
   .button-submit {
+    margin: 2rem 0;
+    background-color: #f7f5f1;
+    color: black;
+    font-weight: bold;
+  }
+
+  .button-submit:hover {
     background-color: #8a0b0b;
+    color: white;
   }
 
   .info-textField {

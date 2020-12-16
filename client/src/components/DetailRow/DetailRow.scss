@@ -1,0 +1,39 @@
+.detail-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .image {
+    flex-basis: 30%;
+    padding: 1rem 1.5rem 1rem 1rem;
+
+    text-align: right;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__text {
+    flex-basis: 70%;
+    text-align: left;
+    display: flex;
+
+    &-key {
+      flex-basis: 20%;
+      font-size: 1rem;
+      text-align: left;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      margin-right: 1rem;
+    }
+
+    &-value {
+      flex-basis: 80%;
+      font-size: 1rem;
+      text-align: left;
+      font-family: "Roboto", sans-serif;
+    }
+  }
+}

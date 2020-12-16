@@ -1,16 +1,11 @@
 .heading-nav {
-  background-color: #8a0b0b;
-  text-align: center;
+  background-color: white;
   box-shadow: 0 8px 6px -6px grey;
-
-  h1 {
-    font-family: "Source Serif Pro", cursive;
-    font-size: 2rem;
-    padding: 2rem 0 1rem;
-    color: white;
-    font-weight: bold;
-    border-radius: 30%;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  position: relative;
 
   p {
     font-size: 1.5rem;
@@ -19,16 +14,25 @@
     padding-bottom: 2rem;
   }
 
+  .icon {
+    margin-left: 2rem;
+  }
+
   ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 
     li {
-      font-size: 1.5rem;
-      margin: 0 2rem 2rem;
+      font-size: 1.2rem;
+      padding: 0 2rem;
       font-family: "Source Serif Pro";
       cursor: pointer;
+    }
+
+    li:last-child {
+      border-left: 2px white solid;
     }
   }
 }

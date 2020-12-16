@@ -101,6 +101,7 @@ const RSVP = () => {
               }}
               label="Events"
               defaultValue={listOfEvents.engagement}
+              required
             >
               <MenuItem value="Engagement">Engagement</MenuItem>
             </Select>

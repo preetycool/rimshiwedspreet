@@ -1,0 +1,47 @@
+@import "../../mixins.scss";
+
+.details-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+
+  &__wrapper {
+    box-sizing: border-box;
+    width: 1000px;
+    margin: 8rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 8px 6px -6px grey;
+
+    h1 {
+      font-size: 2rem;
+      font-family: "Dancing Script";
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      flex-basis: 100%;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 1.2rem;
+      font-family: "Dancing Script", sans-serif;
+      font-weight: 500;
+    }
+
+    .MuiFormControl-root {
+      width: 400px;
+      margin-bottom: 2rem;
+    }
+
+    &-info {
+      width: 50%;
+      text-align: center;
+    }
+  }
+}

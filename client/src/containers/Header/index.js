@@ -15,10 +15,16 @@ const Header = () => {
 
   return (
     <div className="heading-nav">
-      <h1>Rimshi &amp; Preet</h1>
-      <nav>
+      <img
+        className="icon"
+        src={require("../../Images/pr.png")}
+        alt="Rimshi and Preet"
+        width="80px"
+        height="80px"
+      />
+      <nav className="navbar">
         <ul>
-          <li onClick={handleCountdownClick}>Countdown</li>
+          <li onClick={handleCountdownClick}>Event Details</li>
           <li onClick={handleRsvpClick}>RSVP</li>
         </ul>
       </nav>

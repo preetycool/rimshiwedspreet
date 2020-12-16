@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import TimerPage from "../containers/TimerPage";
+import DetailsPage from "../containers/DetailsPage";
 import RSVP from "../containers/RSVP";
 
 const Routes = () => {
@@ -8,7 +8,7 @@ const Routes = () => {
     <>
       <Switch>
         <Route exact path="/">
-          <TimerPage />
+          <DetailsPage />
         </Route>
         <Route exact path="/rsvp">
           <RSVP />
