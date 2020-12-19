@@ -14,21 +14,22 @@ const Header = () => {
   };
 
   return (
-    <div className="heading-nav">
-      <img
-        className="icon"
-        src={require("../../Images/pr.png")}
-        alt="Rimshi and Preet"
-        width="80px"
-        height="80px"
-      />
-      <nav className="navbar">
+    <nav className="navbar">
+      <div className="navbar__icon">
+        <img
+          src={require("../../Images/pr.png")}
+          alt="Rimshi and Preet"
+          width="80px"
+          height="80px"
+        />
+      </div>
+      <div className="navbar__categories">
         <ul>
           <li onClick={handleCountdownClick}>Event Details</li>
           <li onClick={handleRsvpClick}>RSVP</li>
         </ul>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 

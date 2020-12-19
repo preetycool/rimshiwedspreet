@@ -1,7 +1,15 @@
+@import "../../mixins.scss";
+
 .rsvp-form {
+  @include xs {
+    width: 90%;
+    margin: 2rem auto;
+  }
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 90%;
   margin: 8rem auto;
   background-color: white;
-  padding: 2rem;
   box-shadow: 0 8px 6px -6px grey;
 
   .title {
@@ -24,7 +32,7 @@
     align-items: center;
 
     .MuiFormControl-root {
-      width: 500px;
+      width: 70%;
       margin: 1rem;
     }
   }
@@ -48,5 +56,11 @@
 
   .info-textField {
     width: 100vw;
+  }
+
+  .message__wrapper {
+    text-align: center;
+    margin: 3rem auto;
+    width: 80%;
   }
 }

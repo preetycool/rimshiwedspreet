@@ -1,38 +1,50 @@
-.heading-nav {
+@import "../../mixins.scss";
+
+.navbar {
   background-color: white;
   box-shadow: 0 8px 6px -6px grey;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  flex-wrap: wrap;
   position: relative;
 
-  p {
-    font-size: 1.5rem;
-    font-family: "Marck Script", cursive;
-    text-align: center;
-    padding-bottom: 2rem;
-  }
-
-  .icon {
-    margin-left: 2rem;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    li {
-      font-size: 1.2rem;
-      padding: 0 2rem;
-      font-family: "Source Serif Pro";
-      cursor: pointer;
+  &__icon {
+    @include xs {
+      margin-left: 1.5rem;
     }
+    margin-left: 2rem;
 
-    li:last-child {
-      border-left: 2px white solid;
+    img {
+      @include xs {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  &__categories {
+    ul {
+      @include xs {
+        justify-content: flex-start;
+      }
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        @include xs {
+          font-size: 0.8rem;
+        }
+        font-size: 1.2rem;
+        padding: 0 2rem;
+        font-family: "Source Serif Pro";
+        cursor: pointer;
+      }
+
+      li:last-child {
+        border-left: 2px black solid;
+      }
     }
   }
 }

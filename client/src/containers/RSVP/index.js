@@ -81,10 +81,12 @@ const RSVP = () => {
   const formlayout = () => {
     if (!!submissionMessage.message) {
       return (
-        <Message
-          messageText={submissionMessage.message}
-          messageType={submissionMessage.type}
-        />
+        <div className="message__wrapper">
+          <Message
+            messageText={submissionMessage.message}
+            messageType={submissionMessage.type}
+          />
+        </div>
       );
     } else {
       return (
@@ -173,14 +175,16 @@ const RSVP = () => {
 
   return (
     <div className="rsvp-form">
-      <h1 className="title">Please enter your details below</h1>
-      {isLoading ? (
-        <div className="circular-loader">
-          <CircularProgress />
-        </div>
-      ) : (
-        formlayout()
-      )}
+      <div className="form-details">
+        <h1 className="title">Please enter your details below</h1>
+        {isLoading ? (
+          <div className="circular-loader">
+            <CircularProgress />
+          </div>
+        ) : (
+          formlayout()
+        )}
+      </div>
     </div>
   );
 };

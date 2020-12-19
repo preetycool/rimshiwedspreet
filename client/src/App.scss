@@ -1,8 +1,8 @@
 .App {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-  position: relative;
   background-color: #f7f5f1;
 }
