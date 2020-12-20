@@ -37,6 +37,10 @@
 
   &__details {
     &-title {
+      @include xs {
+        font-size: 1.5rem;
+        margin: 2rem 0;
+      }
       font-size: 2rem;
       text-align: center;
       font-family: "Source Serif Pro", cursive;

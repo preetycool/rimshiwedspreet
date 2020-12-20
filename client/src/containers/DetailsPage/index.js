@@ -95,9 +95,9 @@ const TimerPage = () => {
             className="time"
             iconSource={{
               image: "time.png",
-              alt: "location-icon",
+              alt: "time-icon",
             }}
-            text={`Location: ${eventType.time}`}
+            text={`Time: ${eventType.time}`}
           />
         </div>
       </div>
