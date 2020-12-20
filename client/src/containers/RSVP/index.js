@@ -66,7 +66,6 @@ const RSVP = () => {
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
-    console.log(passwordEntered);
     if (passwordEntered) {
       setIsLoading(true);
       axios({
@@ -76,6 +75,7 @@ const RSVP = () => {
           password: passwordEntered,
         },
       }).then((response) => {
+        setIsLoading(false);
         if (response.data.status === "success") {
           setDisplayForm(true);
         } else if (response.data.status === "fail") {
