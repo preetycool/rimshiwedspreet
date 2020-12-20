@@ -116,7 +116,7 @@ const RSVP = () => {
           />
         </div>
       );
-    } else if (displayForm) {
+    } else if (!displayForm) {
       return (
         <form className="rsvp-form__password" onSubmit={handlePasswordSubmit}>
           <TextField
@@ -140,7 +140,7 @@ const RSVP = () => {
           </Button>
         </form>
       );
-    } else if (!displayForm) {
+    } else if (displayForm) {
       return (
         <form
           className="rsvp-form__details-information"
