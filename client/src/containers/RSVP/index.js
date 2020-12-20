@@ -232,7 +232,9 @@ const RSVP = () => {
     <div className="rsvp-form">
       <div className="rsvp-form__details">
         <h1 className="rsvp-form__details-title">
-          Please enter your details below
+          {displayForm
+            ? "Please enter your details below"
+            : "Please enter your password"}
         </h1>
         {isLoading ? (
           <div className="circular-loader">
