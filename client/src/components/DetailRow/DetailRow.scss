@@ -6,11 +6,8 @@
   align-items: center;
 
   .image {
-    @include xs {
-      flex-basis: 10%;
-    }
-    flex-basis: 30%;
-    padding: 1rem 1.5rem 1rem 1rem;
+    margin-right: 2rem;
+    padding: 1rem 1rem 1rem 1rem;
 
     text-align: right;
 
@@ -26,7 +23,7 @@
       flex-direction: column;
     }
     flex-basis: 70%;
-    text-align: left;
+    text-align: center;
     display: flex;
 
     &-key {

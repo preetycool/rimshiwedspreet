@@ -71,9 +71,7 @@ const RSVP = () => {
       axios({
         method: "POST",
         url: "/password",
-        data: {
-          password: passwordEntered,
-        },
+        data: { password: passwordEntered },
       }).then((response) => {
         setIsLoading(false);
         if (response.data.status === "success") {
@@ -118,11 +116,11 @@ const RSVP = () => {
           />
         </div>
       );
-    } else if (!displayForm) {
+    } else if (displayForm) {
       return (
-        <form className="password-form" onSubmit={handlePasswordSubmit}>
+        <form className="rsvp-form__password" onSubmit={handlePasswordSubmit}>
           <TextField
-            className="password-textfield"
+            className="rsvp-form__password-textfield"
             required
             id="password"
             label="Enter Password"
@@ -142,9 +140,12 @@ const RSVP = () => {
           </Button>
         </form>
       );
-    } else if (displayForm) {
+    } else if (!displayForm) {
       return (
-        <form className="information-form" onSubmit={handleSubmit}>
+        <form
+          className="rsvp-form__details-information"
+          onSubmit={handleSubmit}
+        >
           <FormControl variant="outlined">
             <InputLabel id={listOfIds.event}>Events</InputLabel>
             <Select
@@ -163,7 +164,7 @@ const RSVP = () => {
             </Select>
           </FormControl>
           <TextField
-            className="info-textfield"
+            className="rsvp-form__details-information-textfield"
             required
             id={listOfIds.name}
             label="Name"
@@ -172,7 +173,7 @@ const RSVP = () => {
             onChange={(e) => handleChange(e, listOfIds.Name)}
           />
           <TextField
-            className="info-textfield"
+            className="rsvp-form__details-information-textfield"
             required
             id={listOfIds.email}
             label="Email"
@@ -181,7 +182,7 @@ const RSVP = () => {
             onChange={(e) => handleChange(e, listOfIds.Email)}
           />
           <TextField
-            className="info-textfield"
+            className="rsvp-form__details-information-textfield"
             required
             id={listOfIds.telephone}
             label="Telephone Number"
@@ -190,7 +191,7 @@ const RSVP = () => {
             onChange={(e) => handleChange(e, listOfIds.Telephone)}
           />
           <TextField
-            className="info-textfield"
+            className="rsvp-form__details-information-textfield"
             required
             id={listOfIds.guests}
             label="Name of Guests"
@@ -201,7 +202,7 @@ const RSVP = () => {
             onChange={(e) => handleChange(e, listOfIds.Guests)}
           />
           <TextField
-            className="info-textfield"
+            className="rsvp-form__details-information-textfield"
             required
             id={listOfIds.dietary}
             label="Please list any dietary requirements"
@@ -229,8 +230,10 @@ const RSVP = () => {
 
   return (
     <div className="rsvp-form">
-      <div className="form-details">
-        <h1 className="title">Please enter your details below</h1>
+      <div className="rsvp-form__details">
+        <h1 className="rsvp-form__details-title">
+          Please enter your details below
+        </h1>
         {isLoading ? (
           <div className="circular-loader">
             <CircularProgress />

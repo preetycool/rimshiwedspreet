@@ -50,8 +50,8 @@
     }
 
     &-info {
-      @include sm {
-        width: 100%;
+      @include xs {
+        width: 80%;
       }
       width: 50%;
       text-align: center;
