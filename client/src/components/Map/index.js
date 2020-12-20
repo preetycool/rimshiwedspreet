@@ -3,7 +3,6 @@ import GoogleMapReact from "google-maps-react";
 import "./Map.scss";
 
 const Map = ({ location, zoomLevel, google }) => {
-  console.log(location);
   return (
     <div style={{ height: "400px", width: "400px" }} className="google-map">
       <GoogleMapReact

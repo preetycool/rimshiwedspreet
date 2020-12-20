@@ -16,6 +16,7 @@ const TimerPage = () => {
       date: new Date(2021, 0, 17),
       time: "5:00pm to late",
       location: "Parra Villa Function Lounge",
+      address: "42 Campbell St, Parramatta NSW 2150",
       lat: -33.8178381,
       lng: 151.0028019,
     },
@@ -24,6 +25,7 @@ const TimerPage = () => {
       date: new Date(2021, 7, 22),
       time: "TBC",
       location: "The Epping Club",
+      address: "45-47 Rawson St, Epping NSW 2121",
       lat: -33.7733194,
       lng: 151.0785641,
     },
@@ -32,6 +34,7 @@ const TimerPage = () => {
       date: new Date(2021, 7, 28),
       time: "TBC",
       location: "Glenwood Gurdwara",
+      address: "4/18 Meurants Ln, Glenwood NSW 2768",
       lat: -33.7380147,
       lng: 150.9177304,
     },
@@ -40,6 +43,7 @@ const TimerPage = () => {
       date: new Date(2021, 7, 29),
       time: "TBC",
       location: "Deckhouse Woolwich",
+      address: "Clarke Rd, Woolwich NSW 2110",
       lat: -33.8415158,
       lng: 151.1714424,
     },
@@ -89,7 +93,7 @@ const TimerPage = () => {
               image: "map.png",
               alt: "location-icon",
             }}
-            text={`Location: ${eventType.location}`}
+            text={`Location: ${eventType.location} - ${eventType.address}`}
           />
           <DetailRow
             className="time"
