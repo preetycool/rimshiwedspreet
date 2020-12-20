@@ -22,9 +22,7 @@ app.use(express.json());
 app.listen(PORT);
 
 router.post("/password", (req, res, next) => {
-  const passwordToVerify = req.body.find(
-    (request) => request.id === "password"
-  );
+  const passwordToVerify = req.body.password || "";
   if (passwordToVerify === config.RSVP_PASS) {
     res.json({
       status: "success",
