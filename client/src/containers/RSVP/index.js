@@ -33,6 +33,8 @@ const RSVP = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [submissionMessage, setSubmissionMessage] = useState({});
+  const [displayForm, setDisplayForm] = useState(false);
+  const [passwordEntered, setPasswordEntered] = useState("");
 
   const handleSubmit = (e) => {
     if (!!submissionFormDetails.find((detail) => detail.value === "")) {
@@ -62,6 +64,34 @@ const RSVP = () => {
     });
   };
 
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    console.log(passwordEntered);
+    if (passwordEntered) {
+      setIsLoading(true);
+      axios({
+        method: "POST",
+        url: "/password",
+        data: {
+          password: passwordEntered,
+        },
+      }).then((response) => {
+        if (response.data.status === "success") {
+          setDisplayForm(true);
+        } else if (response.data.status === "fail") {
+          setSubmissionMessage({
+            type: "error",
+            message: "Incorrect password try again",
+          });
+        }
+      });
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    setPasswordEntered(e.target.value);
+  };
+
   const [dropdownValue, setDropdownValue] = useState(() => {
     const eventData = submissionFormDetails.find(
       (detail) => detail.id === "Event"
@@ -88,7 +118,31 @@ const RSVP = () => {
           />
         </div>
       );
-    } else {
+    } else if (!displayForm) {
+      return (
+        <form className="password-form" onSubmit={handlePasswordSubmit}>
+          <TextField
+            className="password-textfield"
+            required
+            id="password"
+            label="Enter Password"
+            defaultValue=""
+            variant="outlined"
+            onChange={handlePasswordChange}
+          />
+          <Button
+            className="button-submit"
+            onClick={handlePasswordSubmit}
+            type="submit"
+            id="submit"
+            variant="contained"
+            color="primary"
+          >
+            Submit Password
+          </Button>
+        </form>
+      );
+    } else if (displayForm) {
       return (
         <form className="information-form" onSubmit={handleSubmit}>
           <FormControl variant="outlined">

@@ -2,7 +2,7 @@ import React from "react";
 import "./DetailRow.scss";
 
 const DetailRow = ({ className, iconSource, text }) => {
-  const textSplit = text.split(":");
+  const textSplit = text.split(": ");
 
   return (
     <div className={`detail-row ${className}`}>

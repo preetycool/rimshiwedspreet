@@ -1,4 +1,5 @@
 const express = require("express");
+const router = express.Router();
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const creds = require("./config");
@@ -20,11 +21,24 @@ app.use(cors());
 app.use(express.json());
 app.listen(PORT);
 
+router.post("/password", (req, res, next) => {
+  console.log(req);
+  if (1 === 1) {
+    res.json({
+      status: "fail",
+    });
+  } else {
+    res.json({
+      status: "success",
+    });
+  }
+});
+
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  router.use(express.static("client/build"));
 
   const path = require("path");
-  app.get("*", (req, res) => {
+  router.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
@@ -39,7 +53,7 @@ transporter.verify((error, success) => {
   }
 });
 
-app.post("/send", (req, res, next) => {
+router.post("/send", (req, res, next) => {
   let content = "";
 
   const name = req.body.find((request) => request.id === "name");
@@ -66,3 +80,5 @@ app.post("/send", (req, res, next) => {
     }
   });
 });
+
+app.use("", router);

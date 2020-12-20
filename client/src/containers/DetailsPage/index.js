@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { differenceInMilliseconds, format } from "date-fns";
+import React, { useState } from "react";
+import { format } from "date-fns";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import DetailRow from "../../components/DetailRow";
+import Map from "../../components/Map";
 import "./DetailsPage.scss";
 
 const TimerPage = () => {
@@ -13,49 +14,45 @@ const TimerPage = () => {
     {
       name: "Engagement",
       date: new Date(2021, 0, 17),
-      location: "Paravilla",
+      time: "5:00pm to late",
+      location: "Parra Villa Function Lounge",
+      lat: -33.8178381,
+      lng: 151.0028019,
     },
     {
       name: "Sangeet",
       date: new Date(2021, 7, 22),
-      location: "Epping Club",
+      time: "TBC",
+      location: "The Epping Club",
+      lat: -33.7733194,
+      lng: 151.0785641,
     },
     {
       name: "Wedding",
       date: new Date(2021, 7, 28),
+      time: "TBC",
       location: "Glenwood Gurdwara",
+      lat: -33.7380147,
+      lng: 150.9177304,
     },
     {
       name: "Reception",
       date: new Date(2021, 7, 29),
-      location: "Deckhouse",
+      time: "TBC",
+      location: "Deckhouse Woolwich",
+      lat: -33.8415158,
+      lng: 151.1714424,
     },
   ];
 
-  const weddingEvent = events.find((event) => event.name === "Wedding");
+  const engagementEvent = events.find((event) => event.name === "Engagement");
 
-  const [eventType, setEventType] = useState(weddingEvent);
+  const [eventType, setEventType] = useState(engagementEvent);
 
   const handleDropdownChange = (e) => {
     const selectedEvent = events.find((event) => event.name === e.target.value);
     setEventType(selectedEvent);
   };
-
-  // // Initialize and add the map
-  // function initMap() {
-  //   // The location of Uluru
-  //   const uluru = { lat: -25.344, lng: 131.036 };
-  //   // The map, centered at Uluru
-  //   const map = new window.google.maps.Map(document.getElementById("map"), {
-  //     zoom: 4,
-  //     center: uluru,
-  //   });
-  //   // The marker, positioned at Uluru
-  //   const marker = new window.google.maps.Marker({
-  //     position: uluru,
-  //     map: map,
-  //   });
-  // }
 
   return (
     <div className="details-page">
@@ -93,6 +90,14 @@ const TimerPage = () => {
               alt: "location-icon",
             }}
             text={`Location: ${eventType.location}`}
+          />
+          <DetailRow
+            className="time"
+            iconSource={{
+              image: "time.png",
+              alt: "location-icon",
+            }}
+            text={`Location: ${eventType.time}`}
           />
         </div>
       </div>
