@@ -33,7 +33,7 @@ const RSVP = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [submissionMessage, setSubmissionMessage] = useState({});
-  const [displayForm, setDisplayForm] = useState(false);
+  const [displayForm, setDisplayForm] = useState(true);
   const [passwordEntered, setPasswordEntered] = useState("");
 
   const handleSubmit = (e) => {
