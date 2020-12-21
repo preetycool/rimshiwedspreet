@@ -3,14 +3,12 @@
 .details-page {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 
   &__wrapper {
     @include xs {
       width: 90%;
       margin: 2rem auto;
-      display: flex;
-      flex-direction: column;
     }
     box-sizing: border-box;
     max-width: 1000px;
