@@ -8,44 +8,52 @@ import DetailRow from "../../components/DetailRow";
 import Map from "../../components/Map";
 import "./DetailsPage.scss";
 
-const TimerPage = () => {
+const DetailsPage = () => {
   const google = window.google;
   const events = [
     {
       name: "Engagement",
       date: new Date(2021, 0, 17),
-      time: "5:00pm to late",
-      location: "Parra Villa Function Lounge",
-      address: "42 Campbell St, Parramatta NSW 2150",
-      lat: -33.8178381,
-      lng: 151.0028019,
+      time: "6:00pm to late",
+      location: {
+        name: "Parra Villa Function Lounge",
+        address: "42 Campbell St, Parramatta NSW 2150",
+        lat: -33.8177439,
+        lng: 151.0005269,
+      },
     },
     {
       name: "Sangeet",
       date: new Date(2021, 7, 22),
       time: "TBC",
-      location: "The Epping Club",
-      address: "45-47 Rawson St, Epping NSW 2121",
-      lat: -33.7733194,
-      lng: 151.0785641,
+      location: {
+        name: "The Epping Club",
+        address: "45-47 Rawson St, Epping NSW 2121",
+        lat: -33.7733194,
+        lng: 151.0785641,
+      },
     },
     {
       name: "Wedding",
       date: new Date(2021, 7, 28),
       time: "TBC",
-      location: "Glenwood Gurdwara",
-      address: "4/18 Meurants Ln, Glenwood NSW 2768",
-      lat: -33.7380147,
-      lng: 150.9177304,
+      location: {
+        name: "Glenwood Gurdwara",
+        address: "4/18 Meurants Ln, Glenwood NSW 2768",
+        lat: -33.7380147,
+        lng: 150.9177304,
+      },
     },
     {
       name: "Reception",
       date: new Date(2021, 7, 29),
       time: "TBC",
-      location: "Deckhouse Woolwich",
-      address: "Clarke Rd, Woolwich NSW 2110",
-      lat: -33.8415158,
-      lng: 151.1714424,
+      location: {
+        name: "Deckhouse Woolwich",
+        address: "Clarke Rd, Woolwich NSW 2110",
+        lat: -33.8415158,
+        lng: 151.1714424,
+      },
     },
   ];
 
@@ -72,7 +80,9 @@ const TimerPage = () => {
               label="Events"
             >
               {events.map((event) => (
-                <MenuItem value={event.name}>{event.name}</MenuItem>
+                <MenuItem key={event.name} value={event.name}>
+                  {event.name}
+                </MenuItem>
               ))}
             </Select>
           </FormControl>
@@ -93,7 +103,7 @@ const TimerPage = () => {
               image: "map.png",
               alt: "location-icon",
             }}
-            text={`Location: ${eventType.location} - ${eventType.address}`}
+            text={`Location: ${eventType.location.name} -  ${eventType.location.address}`}
           />
           <DetailRow
             className="time"
@@ -103,10 +113,11 @@ const TimerPage = () => {
             }}
             text={`Time: ${eventType.time}`}
           />
+          <Map location={eventType.location} google={google} />
         </div>
       </div>
     </div>
   );
 };
 
-export default TimerPage;
+export default DetailsPage;
