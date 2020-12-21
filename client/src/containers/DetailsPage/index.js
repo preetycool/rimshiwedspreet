@@ -18,8 +18,8 @@ const DetailsPage = () => {
       location: {
         name: "Parra Villa Function Lounge",
         address: "42 Campbell St, Parramatta NSW 2150",
-        lat: -33.8177439,
-        lng: 151.0005269,
+        lat: -33.81796470343846,
+        lng: 151.00155109745515,
       },
     },
     {
@@ -29,8 +29,8 @@ const DetailsPage = () => {
       location: {
         name: "The Epping Club",
         address: "45-47 Rawson St, Epping NSW 2121",
-        lat: -33.7733194,
-        lng: 151.0785641,
+        lat: -33.77329440367127,
+        lng: 151.08075820596946,
       },
     },
     {
@@ -40,8 +40,8 @@ const DetailsPage = () => {
       location: {
         name: "Glenwood Gurdwara",
         address: "4/18 Meurants Ln, Glenwood NSW 2768",
-        lat: -33.7380147,
-        lng: 150.9177304,
+        lat: -33.737871929411355,
+        lng: 150.91996201395014,
       },
     },
     {
@@ -51,8 +51,8 @@ const DetailsPage = () => {
       location: {
         name: "Deckhouse Woolwich",
         address: "Clarke Rd, Woolwich NSW 2110",
-        lat: -33.8415158,
-        lng: 151.1714424,
+        lat: -33.84149092946071,
+        lng: 151.1736316704075,
       },
     },
   ];

@@ -7,8 +7,7 @@ import "./Map.scss";
 const LocationPin = ({ text }) => (
   <div
     style={{
-      color: "white",
-      background: "grey",
+      color: "black",
       padding: "15px 15px",
       display: "inline-flex",
       textAlign: "center",
@@ -21,6 +20,7 @@ const LocationPin = ({ text }) => (
     className="pin"
   >
     <p className="pin-text">{text}</p>
+    <Icon icon={locationIcon} className="pin-icon" />
   </div>
 );
 
@@ -33,9 +33,13 @@ const Map = ({ location, zoomLevel, google }) => {
           lat: -33.8178381,
           lng: 151.0028019,
         }}
-        defaultZoom={zoomLevel || 15}
+        defaultZoom={zoomLevel || 17}
         google={google}
         center={{ lat: location.lat, lng: location.lng }}
+        options={{
+          fullscreenControl: false,
+          zoomControl: false,
+        }}
       >
         <LocationPin
           lat={location.lat}
