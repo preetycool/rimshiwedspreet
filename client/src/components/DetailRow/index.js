@@ -1,8 +1,17 @@
 import React from "react";
 import "./DetailRow.scss";
 
-const DetailRow = ({ className, iconSource, text }) => {
+const DetailRow = ({ className, iconSource, text, isLink, link }) => {
   const textSplit = text.split(": ");
+
+  const detailValue = (text) =>
+    isLink ? (
+      <a className="detail-row__text-value-link" href={link}>
+        {text}
+      </a>
+    ) : (
+      <span className="detail-row__text-value">{text}</span>
+    );
 
   return (
     <div className={`detail-row ${className}`}>
@@ -16,7 +25,7 @@ const DetailRow = ({ className, iconSource, text }) => {
         {textSplit.length === 2 ? (
           <>
             <span className="detail-row__text-key">{`${textSplit[0]}:  `}</span>
-            <span className="detail-row__text-value">{textSplit[1]}</span>
+            {detailValue(textSplit[1])}
           </>
         ) : (
           <span className="detail-row__text-value">{text}</span>

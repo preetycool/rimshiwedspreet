@@ -20,6 +20,7 @@ const DetailsPage = () => {
         address: "42 Campbell St, Parramatta NSW 2150",
         lat: -33.81796470343846,
         lng: 151.00155109745515,
+        link: "https://goo.gl/maps/2pc6KkNTuFrBiV1JA",
       },
     },
     {
@@ -31,6 +32,7 @@ const DetailsPage = () => {
         address: "45-47 Rawson St, Epping NSW 2121",
         lat: -33.77329440367127,
         lng: 151.08075820596946,
+        link: "https://g.page/EppingClub?share",
       },
     },
     {
@@ -42,6 +44,7 @@ const DetailsPage = () => {
         address: "4/18 Meurants Ln, Glenwood NSW 2768",
         lat: -33.737871929411355,
         lng: 150.91996201395014,
+        link: "https://goo.gl/maps/GhfwbWfPXq8tyqMj6",
       },
     },
     {
@@ -53,6 +56,7 @@ const DetailsPage = () => {
         address: "Clarke Rd, Woolwich NSW 2110",
         lat: -33.84149092946071,
         lng: 151.1736316704075,
+        link: "https://g.page/DeckhouseWoolwich?share",
       },
     },
   ];
@@ -103,7 +107,17 @@ const DetailsPage = () => {
               image: "map.png",
               alt: "location-icon",
             }}
-            text={`Location: ${eventType.location.name} -  ${eventType.location.address}`}
+            text={`Location: ${eventType.location.name}`}
+          />
+          <DetailRow
+            className="Address"
+            iconSource={{
+              image: "house.png",
+              alt: "address-icon",
+            }}
+            text={`Address: ${eventType.location.address}`}
+            isLink
+            link={eventType.location.link}
           />
           <DetailRow
             className="time"

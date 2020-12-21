@@ -30,7 +30,7 @@
       @include xs {
         margin-bottom: 0.2rem;
       }
-      flex-basis: 20%;
+      flex-basis: 30%;
       font-size: 1rem;
       text-align: left;
       font-family: "Roboto", sans-serif;
@@ -38,11 +38,13 @@
       margin-right: 1rem;
     }
 
-    &-value {
-      flex-basis: 80%;
+    &-value,
+    &-value-link {
+      flex-basis: 70%;
       font-size: 1rem;
       text-align: left;
       font-family: "Roboto", sans-serif;
+      text-decoration: none;
     }
   }
 }
