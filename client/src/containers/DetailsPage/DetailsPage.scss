@@ -49,6 +49,18 @@
       }
     }
 
+    .button-rsvp {
+      margin: 1rem 0 2rem;
+      background-color: #f7f5f1;
+      color: black;
+      font-weight: bold;
+    }
+
+    .button-rsvp:hover {
+      background-color: #8a0b0b;
+      color: white;
+    }
+
     &-info {
       @include xs {
         width: 100%;

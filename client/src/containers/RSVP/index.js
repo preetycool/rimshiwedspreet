@@ -219,7 +219,6 @@ const RSVP = () => {
             id="submit"
             variant="contained"
             color="primary"
-            onChange={(e) => handleChange(e, listOfIds.Name)}
           >
             Submit Details
           </Button>

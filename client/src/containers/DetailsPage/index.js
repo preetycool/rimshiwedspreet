@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { format } from "date-fns";
 import Select from "@material-ui/core/Select";
+import { useHistory } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -9,7 +11,7 @@ import Map from "../../components/Map";
 import "./DetailsPage.scss";
 
 const DetailsPage = () => {
-  const google = window.google;
+  const history = useHistory();
   const events = [
     {
       name: "Engagement",
@@ -22,6 +24,7 @@ const DetailsPage = () => {
         lng: 151.00155109745515,
         link: "https://goo.gl/maps/2pc6KkNTuFrBiV1JA",
       },
+      rsvpReady: true,
     },
     {
       name: "Sangeet",
@@ -34,6 +37,7 @@ const DetailsPage = () => {
         lng: 151.08075820596946,
         link: "https://g.page/EppingClub?share",
       },
+      rsvpReady: false,
     },
     {
       name: "Wedding",
@@ -46,6 +50,7 @@ const DetailsPage = () => {
         lng: 150.91996201395014,
         link: "https://goo.gl/maps/GhfwbWfPXq8tyqMj6",
       },
+      rsvpReady: false,
     },
     {
       name: "Reception",
@@ -58,6 +63,7 @@ const DetailsPage = () => {
         lng: 151.1736316704075,
         link: "https://g.page/DeckhouseWoolwich?share",
       },
+      rsvpReady: false,
     },
   ];
 
@@ -68,6 +74,10 @@ const DetailsPage = () => {
   const handleDropdownChange = (e) => {
     const selectedEvent = events.find((event) => event.name === e.target.value);
     setEventType(selectedEvent);
+  };
+
+  const handleRsvp = () => {
+    history.push("/rsvp");
   };
 
   return (
@@ -127,7 +137,21 @@ const DetailsPage = () => {
             }}
             text={`Time: ${eventType.time}`}
           />
-          <Map location={eventType.location} google={google} />
+          {eventType.rsvpReady ? (
+            <Button
+              className="button-rsvp"
+              onClick={handleRsvp}
+              type="submit"
+              id="button-rsvp"
+              variant="contained"
+              color="primary"
+            >
+              RSVP here
+            </Button>
+          ) : (
+            ""
+          )}
+          <Map location={eventType.location} />
         </div>
       </div>
     </div>
