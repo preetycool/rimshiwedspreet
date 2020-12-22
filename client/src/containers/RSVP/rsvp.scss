@@ -39,12 +39,11 @@
     &-title {
       @include xs {
         font-size: 1.5rem;
-        margin: 2rem 0;
       }
       font-size: 2rem;
       text-align: center;
-      font-family: "Source Serif Pro", cursive;
-      margin: 2rem;
+      font-family: "Dancing Script", cursive;
+      margin: 2rem 2rem 1rem;
     }
 
     &-information {
