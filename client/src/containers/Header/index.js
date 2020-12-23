@@ -13,6 +13,10 @@ const Header = () => {
     history.push("/");
   };
 
+  const handleImageClick = () => {
+    history.push("/home");
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar__icon">
@@ -21,6 +25,7 @@ const Header = () => {
           alt="Rimshi and Preet"
           width="80px"
           height="80px"
+          onClick={handleImageClick}
         />
       </div>
       <div className="navbar__categories">
