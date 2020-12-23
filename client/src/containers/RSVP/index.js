@@ -163,6 +163,16 @@ const RSVP = () => {
               <MenuItem value="Engagement">Engagement</MenuItem>
             </Select>
           </FormControl>
+          {submissionFormDetails.find((detail) => detail.id === listOfIds.Event)
+            .value ? (
+            <img
+              className="engagement-invite-image"
+              src={require("../../Images/engagement-invitation.jpg")}
+              alt="engagement-invite"
+            />
+          ) : (
+            ""
+          )}
           <TextField
             className="rsvp-form__details-information-textfield"
             required
