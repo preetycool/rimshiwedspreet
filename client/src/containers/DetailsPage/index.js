@@ -26,45 +26,6 @@ const DetailsPage = () => {
       },
       rsvpReady: true,
     },
-    {
-      name: "Sangeet",
-      date: new Date(2021, 7, 22),
-      time: "TBC",
-      location: {
-        name: "The Epping Club",
-        address: "45-47 Rawson St, Epping NSW 2121",
-        lat: -33.77329440367127,
-        lng: 151.08075820596946,
-        link: "https://g.page/EppingClub?share",
-      },
-      rsvpReady: false,
-    },
-    {
-      name: "Wedding",
-      date: new Date(2021, 7, 28),
-      time: "TBC",
-      location: {
-        name: "Glenwood Gurdwara",
-        address: "4/18 Meurants Ln, Glenwood NSW 2768",
-        lat: -33.737871929411355,
-        lng: 150.91996201395014,
-        link: "https://goo.gl/maps/GhfwbWfPXq8tyqMj6",
-      },
-      rsvpReady: false,
-    },
-    {
-      name: "Reception",
-      date: new Date(2021, 7, 29),
-      time: "TBC",
-      location: {
-        name: "Deckhouse Woolwich",
-        address: "Clarke Rd, Woolwich NSW 2110",
-        lat: -33.84149092946071,
-        lng: 151.1736316704075,
-        link: "https://g.page/DeckhouseWoolwich?share",
-      },
-      rsvpReady: false,
-    },
   ];
 
   const engagementEvent = events.find((event) => event.name === "Engagement");
